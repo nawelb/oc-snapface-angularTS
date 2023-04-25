@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable, interval, map } from 'rxjs';
+import { Observable, filter, interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.interval$ = interval(1000).pipe(
-      map(value=>value%2===0 ? "paire" : "impaire")
+      filter(value=> value%3===0),
+      map(value=>value%2===0 ? value+" paire" : value+" impaire")
     ); 
   }
 
