@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapService } from '../services/face-snap.service';
-import { interval, tap } from 'rxjs';
+import { interval, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-snap-face-list',
@@ -22,6 +22,8 @@ export class SnapFaceListComponent implements OnInit {
     Observer la console -> probleme si observable renvoie des tableaux, ou objects volumineux
   */
   interval(1000).pipe(
+    //opérateur take dénombre le nombre d'évenement à observer avant d'arreter l'observable pour éviter les fuites de mémoire -> ici 3
+    take(3),
     tap(console.log)
     ).subscribe();
   }
