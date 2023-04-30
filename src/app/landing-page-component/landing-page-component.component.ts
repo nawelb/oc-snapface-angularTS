@@ -7,13 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing-page-component.component.scss']
 })
 export class LandingPageComponentComponent implements OnInit {
-
+  userEmailTS!:string;
   constructor(private router:Router) { }
+
 
   ngOnInit(): void {
   }
 
   onContinue():void{
     this.router.navigateByUrl('facesnaps')
+  }
+
+  onSubmit(){
+    console.log(this.userEmailTS);
   }
 }

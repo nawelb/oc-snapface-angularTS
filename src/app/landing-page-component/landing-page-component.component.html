@@ -3,4 +3,9 @@
     <div class="landing-links">
         <button (click)=onContinue()> Continuer vers Snapface</button>
     </div>
+    <form (ngSubmit)="onSubmit()">
+        <label for="userEmail">Inscrivez vous pour reçevoir la newsletter !</label>
+        <input type="email" name="userEmail" id="user@" [(ngModel)]="userEmailTS">
+        <button> S'abonner </button>
+    </form>
 </div>

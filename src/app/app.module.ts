@@ -11,6 +11,7 @@ import { appRoutingModule } from './app-routing.module';
 import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
 import { RouterModule } from '@angular/router';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
   imports: [
     BrowserModule,
     appRoutingModule, 
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "fr-FR"}
