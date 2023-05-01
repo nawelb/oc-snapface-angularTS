@@ -80,6 +80,15 @@ export class FaceSnapService{
         const faceSnapToFind=this.getFaceSnapById(faceSnapId);
         snaped === true ? faceSnapToFind.snaps-- : faceSnapToFind.snaps++
       }
+      addFaceSnap(formValue:{title:string, description:string, imageUrl:string, location:string}):void{
+        const faceSnap:FaceSnap={
+          ...formValue,
+          createdDate:new Date(),
+          snaps:0,
+          _id: this.faceSnapsArray[this.faceSnapsArray.length -1]._id + 1
+      };
+      this.faceSnapsArray.push(faceSnap);
 
+}
 }
 
