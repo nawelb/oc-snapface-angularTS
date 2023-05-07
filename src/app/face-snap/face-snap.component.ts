@@ -21,7 +21,7 @@ ngOnInit(){
 }
 
 OnSnap(){
-  this._faceSnapService.snapFaceSnapById(this.facesnap._id, this.snaped);
+  this._faceSnapService.snapFaceSnapById(this.facesnap.id, this.snaped);
   if(this.snaped){
     this.button="Oups, un snap!"
     this.snaped=false;
@@ -33,6 +33,6 @@ OnSnap(){
 }
 
 onViewFaceSnap(){
-  this._router.navigateByUrl('facesnaps/'+this.facesnap._id);
+  this._router.navigateByUrl('facesnaps/'+this.facesnap.id);
  }
 }
